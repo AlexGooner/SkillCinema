@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.citrus.skillcinema.presentation.series.SeasonsViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="45dp"
+        tools:ignore="RtlSymmetry">
+
+        <ProgressBar
+            android:id="@+id/progress_bar_seasons"
+            android:theme="@style/BlueProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:elevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingEnd="20dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/seasons_back_button"
+                    android:layout_width="33dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/white"
+                    android:drawableEnd="@drawable/all_movies_back_item"
+                    />
+
+                <TextView
+                    android:id="@+id/seasons_title_text_view"
+                    style="@style/SkillCinemaText.BoldText"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:paddingStart="70dp"
+                    />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/seasons_text_view"
+                style="@style/SkillCinemaText.BoldText"
+                android:layout_width="220dp"
+                android:layout_height="21dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/SkillCinemaText.Medium"
+                    android:layout_width="59dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/season">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="ScrollViewCount"
+                    >
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/seasons_chip_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal"
+                        android:textSize="24sp"
+                        app:checkedIconEnabled="false"
+                        app:selectionRequired="true"
+                        app:singleSelection="true"
+                        android:paddingEnd="20dp"
+                        >
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/season_count_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/SkillCinemaText.GreyText"
+                android:paddingBottom="15dp">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/seasons_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:listitem="@layout/seasons_item"
+                android:paddingBottom="40dp"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

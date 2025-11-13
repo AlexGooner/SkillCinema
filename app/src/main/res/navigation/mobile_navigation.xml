@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_onboarding">
+
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="com.citrus.skillcinema.presentation.onboaringpage.SplashFragment">
+
+        <action
+            android:id="@+id/action_splash_to_homepage"
+            app:destination="@+id/navigation_home"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_onboarding"
+        android:name="com.citrus.skillcinema.presentation.onboaringpage.OnboardingFragment">
+
+        <action
+            android:id="@+id/action_onboarding_to_splash"
+            app:destination="@+id/navigation_splash"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/navigation_splash"
+            app:popUpToInclusive="true"
+            />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.citrus.skillcinema.presentation.searchpage.SearchFragment"
+        tools:layout="@layout/fragment_search">
+
+        <argument
+            android:name="country"
+            app:argType="string"
+            android:defaultValue="34"/>
+        <argument
+            android:name="genre"
+            app:argType="string"
+            android:defaultValue="1"/>
+        <argument
+            android:name="yearFrom"
+            app:argType="integer"
+            android:defaultValue="1970"/>
+        <argument
+            android:name="yearTo"
+            app:argType="integer"
+            android:defaultValue="2025"/>
+        <argument
+            android:name="minRating"
+            app:argType="integer"
+            android:defaultValue="1"/>
+        <argument
+            android:name="maxRating"
+            app:argType="integer"
+            android:defaultValue="10"/>
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue="ALL"
+            />
+        <argument
+            android:name="order"
+            app:argType="string"
+            android:defaultValue="RATING"/>
+        <argument
+            android:name="isWatched"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+        <action
+            android:id="@+id/navigation_search_to_certain"
+            app:destination="@+id/navigation_certain_movie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+        <action
+            android:id="@+id/navigation_search_to_settings"
+            app:destination="@+id/navigation_search_settings"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_search_settings"
+        android:name="com.citrus.skillcinema.presentation.searchpage.settings.SearchSettingsFragment">
+
+        <argument
+            android:name="country"
+            android:defaultValue="Россия"
+            app:argType="string" />
+
+        <argument
+            android:name="genre"
+            android:defaultValue="Боевики"
+            app:argType="string" />
+
+        <argument
+            android:name="yearFrom"
+            android:defaultValue="1970"
+            app:argType="integer" />
+        <argument
+            android:name="yearTo"
+            android:defaultValue="2025"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/navigation_settings_to_year"
+            app:destination="@+id/navigation_year_fragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+        <action
+            android:id="@+id/navigation_settings_to_country_or_genre"
+            app:destination="@+id/navigation_settings_country_or_genre"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+        <action
+            android:id="@+id/navigation_settings_to_search"
+            app:destination="@+id/navigation_search"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_year_fragment"
+        android:name="com.citrus.skillcinema.presentation.searchpage.settings.YearFragment">
+
+        <action
+            android:id="@+id/year_to_settings"
+            app:destination="@id/navigation_search_settings"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/navigation_settings_country_or_genre"
+        android:name="com.citrus.skillcinema.presentation.searchpage.settings.CountryAndGenreFragment">
+        <action
+            android:id="@+id/country_or_genre_to_settings"
+            app:destination="@id/navigation_search_settings"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+        <argument
+            android:name="countryOrGenre"
+            android:defaultValue="0"
+            app:argType="string" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.citrus.skillcinema.presentation.profilepage.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:label="@string/profile">
+
+        <action
+            android:id="@+id/action_navigation_profile_to_certain"
+            app:destination="@+id/navigation_certain_movie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+        <action
+            android:id="@+id/action_navigation_profile_to_profile_list"
+            app:destination="@+id/navigation_profile_list"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile_list"
+        android:name="com.citrus.skillcinema.presentation.profilepage.ProfileListFragment"
+        tools:layout="@layout/fragment_profile_list">
+
+        <action
+            android:id="@+id/action_navigation_profile_list_to_certain"
+            app:destination="@+id/navigation_certain_movie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.citrus.skillcinema.presentation.homepage.MovieFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_all_movies"
+            app:destination="@id/navigation_all_movies"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop" />
+
+        <action
+            android:id="@+id/action_navigation_home_to_certain_movie"
+            app:destination="@+id/navigation_certain_movie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_all_movies"
+        android:name="com.citrus.skillcinema.presentation.allmovies.AllMoviesFragment">
+        <argument
+            android:name="movieType"
+            app:argType="string" />
+        <argument
+            android:name="country"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="genre"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_navigation_all_movies_to_certain"
+            app:destination="@+id/navigation_certain_movie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_certain_movie"
+        android:name="com.citrus.skillcinema.presentation.certainmovie.CertainMovieFragment">
+        <argument
+            android:name="movieId"
+            android:defaultValue="0"
+            app:argType="integer">
+
+        </argument>
+        <action
+            android:id="@+id/action_navigation_certain_movie_to_navigation_actor_page4"
+            app:destination="@id/navigation_actor_page"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+        <action
+            android:id="@+id/action_navigation_certain_movie_to_navigation_seasons"
+            app:destination="@id/navigation_seasons"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+        <action
+            android:id="@+id/action_navigation_certain_movie_to_another_certain_movie"
+            app:destination="@+id/navigation_certain_movie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+        <action
+            android:id="@+id/action_navigation_certain_to_actor_full_list"
+            app:destination="@+id/navigation_actor_full_list"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+        <action
+            android:id="@+id/action_navigation_certain_to_full_gallery"
+            app:destination="@+id/navigation_gallery_full_list"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+        <action
+            android:id="@+id/action_certain_to_image_viewer"
+            app:destination="@+id/navigation_image_viewer_fragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_actor_page"
+        android:name="com.citrus.skillcinema.presentation.actorpage.ActorPageFragment">
+        <argument
+            android:name="personId"
+            android:defaultValue="0"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_navigation_actor_page_to_navigation_filmography"
+            app:destination="@id/navigation_filmography"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+        <action
+            android:id="@+id/action_navigation_actor_page_to_navigation_certain_movie"
+            app:destination="@+id/navigation_certain_movie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_filmography"
+        android:name="com.citrus.skillcinema.presentation.filmography.FilmographyFragment">
+        <argument
+            android:name="personId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_navigation_filmography_to_navigation_certain_movie"
+            app:destination="@+id/navigation_certain_movie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop">
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_seasons"
+        android:name="com.citrus.skillcinema.presentation.series.SeasonsFragment">
+        <argument
+            android:name="movieId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_actor_full_list"
+        android:name="com.citrus.skillcinema.presentation.actorfulllist.ActorFullListFragment">
+
+        <argument
+            android:name="movieId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="professionKey"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_navigation_actorFull_to_actor_page"
+            app:destination="@+id/navigation_actor_page"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_gallery_full_list"
+        android:name="com.citrus.skillcinema.presentation.gallerypage.GalleryFullFragment">
+
+        <argument
+            android:name="movieId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_navigation_gallery_full_to_image_viewer"
+            app:destination="@+id/navigation_image_viewer_fragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_pop"
+            app:popExitAnim="@anim/slide_out_pop"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_image_viewer_fragment"
+        android:name="com.citrus.skillcinema.presentation.gallerypage.fullscreen.ImageViewerFragment">
+        <argument
+            android:name="imageUrls"
+            app:argType="string[]" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+
+    </fragment>
+
+
+</navigation>

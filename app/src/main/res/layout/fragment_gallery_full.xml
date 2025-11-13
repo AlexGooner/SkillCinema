@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.citrus.skillcinema.presentation.gallerypage.GalleryFullViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="RtlSymmetry">
+
+        <ProgressBar
+            android:id="@+id/progress_bar_gallery_full"
+            android:theme="@style/BlueProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:elevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="45dp">
+
+
+                <Button
+                    android:id="@+id/gallery_full_back_button"
+                    android:layout_width="33dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background"
+
+                    android:drawableEnd="@drawable/all_movies_back_item" />
+
+                <TextView
+                    android:id="@+id/filmography_title_text_view"
+                    style="@style/SkillCinemaText.BoldText"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="70dp"
+                    android:text="@string/gallery" />
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:layout_marginEnd="10dp">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/gallery_chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:textSize="24sp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingEnd="20dp"
+                    app:checkedIconEnabled="false"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/still_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Кадры" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/shooting_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Со съемок" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/posters_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Постеры" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/fan_arts_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Фан-арты" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/promo_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Промо" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/concepts_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Концепт-арты" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/wallpapers_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Обои" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/covers_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Обложки" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/screenshots_chip_gallery"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Скриншоты" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gallery_full_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                tools:listitem="@layout/gallery_item" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/onboarding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="38dp"
+            android:src="@drawable/skillcinema_logo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/onboarding_miss"
+            style="@style/SkillCinemaText.OnboardingMiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="107dp"
+            android:layout_marginTop="38dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:text="@string/miss_onboarding" />
+
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/onboarding_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp" />
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/onboarding_indicator"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="27dp"
+        android:gravity="start"
+        app:ci_drawable="@drawable/black_radius"
+        app:ci_drawable_unselected="@drawable/black_radius" />
+
+</LinearLayout>

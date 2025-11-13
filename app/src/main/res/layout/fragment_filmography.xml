@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.citrus.skillcinema.presentation.filmography.FilmographyViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="45dp"
+        tools:ignore="RtlSymmetry">
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar_filmography"
+            android:theme="@style/BlueProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:elevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.427"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/filmogr_back_button"
+                    android:layout_width="33dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background"
+                    android:drawableEnd="@drawable/all_movies_back_item" />
+
+                <TextView
+                    android:id="@+id/filmography_title_text_view"
+                    style="@style/SkillCinemaText.BoldText"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="70dp"
+                    android:text="@string/filmography" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/filmography_text_view"
+                style="@style/SkillCinemaText.BoldText"
+                android:layout_width="220dp"
+                android:layout_height="21dp"
+                android:layout_marginTop="20dp" />
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/filmography_chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    android:textSize="24sp"
+                    app:checkedIconEnabled="false"
+                    app:selectionRequired="true"
+                    app:singleSelection="true"
+                    android:layout_marginEnd="30dp">
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/writer_chip_filmography"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Сценарист"
+                        style="@style/ChipStyle"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/director_chip_filmography"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Режиссер" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/producer_chip_filmography"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Продюсер" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/actor_chip_filmography"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Актер" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/himself_chip_filmography"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Играет себя" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/other_chip_filmography"
+                        style="@style/ChipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:chipStrokeColor="@color/black"
+                        app:chipStrokeWidth="1dp"
+                        tools:text="Другое" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/filmography_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:listitem="@layout/filmography_item"
+                android:layout_marginEnd="20dp"/>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

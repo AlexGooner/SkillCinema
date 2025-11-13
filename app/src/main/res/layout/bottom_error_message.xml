@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="360dp"
+    android:layout_height="221dp"
+    app:layout_constraintCircleRadius="16dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/SkillCinemaText.BoldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/error" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close_error"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="34dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_x"
+        android:tint="@color/black_text"
+        tools:ignore="TouchTargetSizeCheck"
+        android:contentDescription="@string/close"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/SkillCinemaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/error_message"
+        android:textColor="@color/grey_text" />
+
+</FrameLayout>

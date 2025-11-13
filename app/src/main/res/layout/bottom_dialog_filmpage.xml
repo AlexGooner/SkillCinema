@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/close_dialog_profile"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="34dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_x"
+        android:tint="@color/black_text"
+        tools:ignore="TouchTargetSizeCheck"
+        android:contentDescription="@string/close"
+
+        />
+
+    <com.citrus.skillcinema.presentation.customview.MovieItemHorizontal
+        android:id="@+id/movie_item_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="24dp"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/grey_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/transparent"
+            app:srcCompat="@drawable/ic_bag"
+            android:layout_marginStart="65dp"
+            android:contentDescription="@string/add_in_collection"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/add_collection_profile"
+            style="@style/SkillCinemaText.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp"
+            android:text="@string/add_in_collection"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/check_box_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/check_box_collection" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_line" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/create_collection_profile"
+        style="@style/SkillCinemaText.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="48dp"
+        android:text="@string/add_collection"
+        android:textSize="16sp" />
+
+</LinearLayout>

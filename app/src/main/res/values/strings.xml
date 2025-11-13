@@ -1,0 +1,130 @@
+<resources>
+    <string name="app_name">SkillCinema</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_search">Search</string>
+    <string name="title_profile">Profile</string>
+    <string name="all">Все</string>
+    <string name="premiers">Премьеры</string>
+    <string name="popular">Популярное</string>
+    <string name="series">Сериалы</string>
+    <string name="top">ТОП-250</string>
+    <string name="show_all">Показать все</string>
+
+
+    <string name="usa">США</string>
+    <string name="swiss">Швейцарии</string>
+    <string name="france">Франции</string>
+    <string name="poland">Польши</string>
+    <string name="uk">Великобритании</string>
+    <string name="sweden">Швеции</string>
+    <string name="india">Индии</string>
+    <string name="spain">Испании</string>
+    <string name="germany">Германии</string>
+    <string name="italy">Италии</string>
+    <string name="hongkong">Гонконга</string>
+    <string name="frg">Германии(ФРГ)</string>
+    <string name="australia">Австралии</string>
+    <string name="canada">Канады</string>
+    <string name="mexico">Мексики</string>
+
+
+    <string name="thrillers">Триллеры</string>
+    <string name="dramas">Драмы</string>
+    <string name="criminal">Криминал</string>
+    <string name="melodramas">Мелодрамы</string>
+    <string name="detectives">Детективы</string>
+    <string name="fantastic">Фантастика</string>
+    <string name="adventure">Приключения</string>
+    <string name="biography">Биографии</string>
+    <string name="nuar">Нуары</string>
+    <string name="western">Вестерны</string>
+    <string name="action">Боевики</string>
+    <string name="fantasy">Фэнтези</string>
+    <string name="comedy">Комедии</string>
+    <string name="military">Военные фильмы</string>
+    <string name="history">Исторические фильмы</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="filmography">Фильмография</string>
+
+    <!-- Strings used for Filmography -->
+    <string name="filmography_page_title">Фильмография</string>
+    <string name="actor">Актер %1$d</string>
+    <string name="actress">Актриса %1$d</string>
+    <string name="director">Режиссер %1$d</string>
+    <string name="himself_man">В роли самого себя %1$d</string>
+    <string name="himself_woman">В роли самой себя %1$d</string>
+    <string name="producer">Продюсер %1$d</string>
+    <string name="writer">Сценарист %1$d</string>
+    <string name="other">Другое %1$d</string>
+    <string name="season">Сезон</string>
+
+
+    <string name="other_series">Другие</string>
+
+    <string name="season_title">Сезон</string>
+    <string name="chip_text_season">Сезон %1$d</string>
+    <plurals name="count_of_seasons_seasonsPage">
+        <item quantity="zero">%1$d сезон, %2$d серий</item>
+        <item quantity="one">%1$d сезон, %2$d серия</item>
+        <item quantity="few">%1$d сезон, %2$d серии</item>
+        <item quantity="many">%1$d сезон, %2$d серий</item>
+        <item quantity="other">%1$d сезон, %2$d серий</item>
+    </plurals>
+
+    <string name="actors">Актеры</string>
+    <string name="stuff">Над фильмом работали</string>
+    <string name="gallery">Галерея</string>
+    <string name="back">Назад</string>
+    <string name="forward">Вперед</string>
+    <string name="edit_hint">Введите название фильма</string>
+    <string name="search">search</string>
+    <string name="search_settings">Настройки поиска</string>
+    <string name="show">Показывать</string>
+    <string name="movies">Фильмы</string>
+    <string name="country">Страна</string>
+    <string name="genre">Жанр</string>
+    <string name="year">Год\n</string>
+    <string name="_1">1</string>
+    <string name="_10">10</string>
+    <string name="rating">Рейтинг</string>
+    <string name="date">Дата</string>
+    <string name="popularity">Популярность</string>
+    <string name="sort">Сортировать</string>
+    <string name="enter_country">Введите страну</string>
+    <string name="enter_genre">Введите жанр</string>
+    <string name="period">Период</string>
+    <string name="search_from">Искать в период с</string>
+    <string name="search_to">Искать в период до</string>
+    <string name="choose">Выбрать</string>
+    <string name="choose_rating">Choose rating</string>
+    <string name="accept">Применить</string>
+    <string name="watched">Просмотрено</string>
+    <string name="collections">Колекции</string>
+    <string name="add_collection">+   Создать свою коллекцию</string>
+    <string name="favourite">Любимые</string>
+    <string name="interesting">Вам было интересно</string>
+    <string name="profile">Профиль</string>
+    <string name="wanted_to_watch">Хочу посмотреть</string>
+    <string name="share">Поделиться</string>
+    <string name="add_in_collection">Добавить в коллекцию</string>
+    <string name="dialog_hint_profile">Введите название для Вашей коллекции</string>
+    <string name="done_dialog_profile">Готово</string>
+
+    <string name="error">Ошибка!</string>
+    <string name="error_message">Во время обработки запросa \nпроизошла ошибка</string>
+    <string name="count_button">%d &gt;</string>
+    <string name="delete_all">Очистить историю</string>
+    <string name="hide_watched">Скрыть просмотренные</string>
+
+    <string name="miss_onboarding">Пропустить</string>
+    <string name="onboarding_first_page">Узнавай о премьерах</string>
+    <string name="onboarding_second_text">Создавай коллекции</string>
+    <string name="onboarding_third_text">Делись с друзьями</string>
+    <string name="close">Закрыть</string>
+</resources>
+
+

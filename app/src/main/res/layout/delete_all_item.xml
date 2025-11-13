@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="70dp"
+    android:layout_height="130dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/delete_all_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="51dp"
+        android:background="@mipmap/ic_container_round"
+        android:contentDescription="@string/delete_all"
+        android:foregroundGravity="clip_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/SkillCinemaText.GreyText"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:text="@string/delete_all"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delete_all_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>
